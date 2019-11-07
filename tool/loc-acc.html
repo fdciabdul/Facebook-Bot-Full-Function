@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<!-- saved from url=(0033)http://hotfb.org/tools/loc-acc.html -->
+<html lang=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>HotFB.Org Lọc Account Trùng</title>
+
+    <!-- Bootstrap -->
+<link href="../css/bootstrap.css" rel="stylesheet">
+<link href="../css/docs.min.css" rel="stylesheet">
+<link href="../css/main.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+	<body>
+<style type="text/css"> 
+HTML,BODY{cursor: url("../hub/c1.cur"), url("../hub/c1.cur"), auto;} 
+A:hover,#submit{cursor: url("../hub/c2.cur"), url("../hub/c2.cur"), auto;} 
+</style>
+<script type="text/javascript" src="../js/snow.js"></script>
+		<nav class="navbar navbar-static-top bs-docs-nav" role="navigation">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="http://hotfb.org/tools/loc-acc.html">HOTFB.ORG - LỌC ACCOUNT TRÙNG</a>
+
+			</div>
+		
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse navbar-ex1-collapse">
+				<ul class="nav navbar-nav navbar-right">
+						<li><a href="#" onclick="location.reload();"><i class="glyphicon glyphicon-refresh"></i></a></li>
+					</ul>
+			</div><!-- /.navbar-collapse -->
+		</nav>
+<br><br><br><br>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2">
+					<div class="panel panel-primary">
+						  <div class="panel-heading">
+								<h3 class="panel-title">NHẬP LIST ACCOUNT CẦN LỌC TRÙNG</h3>
+						  </div>
+						  <div class="panel-body">
+			<textarea class="form-control" rows="10" onclick="select()" id="input">
+email=
+pass=
+
+email=
+pass=
+</textarea>
+</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2">
+					<div class="panel panel-primary">
+						  <div class="panel-heading">
+								<h3 class="panel-title">NGĂN CÁCH BỞI</h3>
+						  </div>
+						  <div class="panel-body">
+			<input type="text" value="|" id="type" class="form-control" </input>
+</div></div></div></div>
+			<div class="row">
+				<div class="col-sm-12 text-center">
+<button class="btn btn-primary" type="submit" onclick="check();">Tiến Hành Lọc Account</button></div>
+		</div><br>
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2">
+					<div class="panel panel-primary">
+						  <div class="panel-heading">
+								<h3 class="panel-title">KẾT QUẢ</h3>
+						  </div>
+						  <div class="panel-body">
+			<textarea class="form-control" rows="10" onclick="select()" id="output"></textarea>
+		</div>
+	</div>
+	</div>	</div>
+	<script type="text/javascript">
+		var el = document.querySelector('.donate');
+		function check() {
+			list = document.getElementById('input').value;
+			type = document.getElementById('type').value;
+			xxx  = list.split("\n");
+			abcd = [];
+			for (var i = 0; i < xxx.length; i++) {
+				line = xxx[i];
+				if (!line.match(/(email=([\w@.+]+)|pass=(\w+))/g)) {
+					line = '';
+				}
+				abcd.push(line);
+			}
+			list = abcd.join("\n");
+			desc = list.replace(/email=([\w@.+]+)(\s+)pass=(\w+)/g, '$1' + type + '$3').trim();
+			xxx  = desc.split("\n");
+			for (var i = 0; i < xxx.length; i++) {
+				if (xxx[i].match(/(email=|pass=)/g)) {
+					xxx[i] = '';
+				}
+				for (var x = i + 1; x < xxx.length; x++) {
+					if (xxx[i] == xxx[x]) {
+						xxx[x] = '';
+					}
+				};
+			};
+			desc = xxx.join("\n").replace(/\n+\n/g, "\n").trim();
+			document.getElementById('output').value = desc;
+			el.classList.remove('is-paused');
+		}
+	</script>
+</body>
+</html>

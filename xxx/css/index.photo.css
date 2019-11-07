@@ -1,0 +1,61 @@
+.albums {
+    padding: 5px 10px 5px 10px;
+}
+
+.albums .picture {
+    position: relative;
+    margin: 3px 0 40px 15px;
+    /*background: #f8f8f8;*/
+
+    background: white;
+    border: 1px solid #AAA;
+
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+
+    padding: 10px 10px 10px 10px;
+
+    width: 180px;
+    height: 180px;
+
+    float: left;
+	
+    opacity: .5;
+    filter: alpha(opacity = 50);
+}
+
+.albums a {
+    width: 180px;
+    height: 180px;
+}
+
+.albums .picture form {
+    margin: 20px 0 0 60px;
+}
+
+.albums .picture img {
+    width: 178px;
+    height: 178px;
+    border: 1px solid #cccccc;
+
+    opacity: .5;
+    filter: alpha(opacity = 50);
+}
+
+.albums .picture img:hover {
+    opacity: 1;
+    filter: alpha(opacity = 100);
+    box-shadow: 0px 0px 8px;
+}
+
+.albums .picture, .albums .picture img {
+    -webkit-transition: all 0.25s ease-in-out;
+    -moz-transition: all 0.25s ease-in-out;
+    transition: all 0.25s ease-in-out;
+}

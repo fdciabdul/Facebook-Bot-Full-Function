@@ -1,0 +1,1 @@
+[18-Jul-2016 01:06:24 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20131226/ffmpeg.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20131226/ffmpeg.so: cannot open shared object file: No such file or directory in Unknown on line 0

@@ -1,0 +1,1 @@
+[14-Aug-2016 04:34:22 America/Chicago] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/yeuthuy/public_html/thong-bao/special-thank.php:2) in /home/yeuthuy/public_html/thong-bao/head.php on line 2
